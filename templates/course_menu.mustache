@@ -1,0 +1,65 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template format_mtubebs/course_menu
+
+    Off-canvas course menu for the distraction-free pages of a course.
+
+    Example context (json):
+    {
+        "title": "Course name",
+        "items": [
+            {"text": "Grades", "url": "#", "active": true, "haschildren": false, "children": []},
+            {"text": "More", "url": "", "active": false, "haschildren": true, "children": [
+                {"text": "Badges", "url": "#", "active": false}
+            ]}
+        ]
+    }
+}}
+<div class="offcanvas offcanvas-start mtubebs-course-menu" tabindex="-1" id="mtubebs-course-menu"
+     aria-labelledby="mtubebs-course-menu-label">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title text-truncate mb-0" id="mtubebs-course-menu-label">{{title}}</h5>
+        <button type="button" class="btn-icon icons-collapse-expand btn ms-auto" data-bs-dismiss="offcanvas"
+                title="{{#str}}close, format_mtubebs{{/str}}" aria-label="{{#str}}close, format_mtubebs{{/str}}">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+    </div>
+    <nav class="offcanvas-body" aria-label="{{title}}">
+        <ul class="nav flex-column">
+            {{#items}}
+            <li class="nav-item">
+                {{#url}}
+                <a class="nav-link{{#active}} active{{/active}}" href="{{url}}"{{#active}} aria-current="page"{{/active}}>{{text}}</a>
+                {{/url}}
+                {{^url}}
+                <span class="nav-link text-muted">{{text}}</span>
+                {{/url}}
+                {{#haschildren}}
+                <ul class="nav flex-column ms-3">
+                    {{#children}}
+                    <li class="nav-item">
+                        <a class="nav-link{{#active}} active{{/active}}" href="{{url}}"{{#active}} aria-current="page"{{/active}}>{{text}}</a>
+                    </li>
+                    {{/children}}
+                </ul>
+                {{/haschildren}}
+            </li>
+            {{/items}}
+        </ul>
+    </nav>
+</div>

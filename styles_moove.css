@@ -1,0 +1,62 @@
+/* stylelint-disable declaration-no-important */
+#page-course-view-mtubebs.pagelayout-course:not(.editing):has(.moove).has-secondarynavigation #page {
+    margin-top: 70px;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing):has(.moove) footer {
+    display: none;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing):has(.moove) .secondary-navigation.moove {
+    filter: none;
+    display: none;
+}
+
+#page-course-view-mtubebs .sectionheader-card {
+    box-shadow: none !important;
+}
+
+@media (min-width: 768px) {
+    body.format-mtubebs.has-secondarynavigation .drawer-left,
+    body.format-mtubebs.has-secondarynavigation .drawer-right {
+        top: 70px;
+        height: 100vh;
+    }
+
+    body.format-mtubebs.path-mod.has-secondarynavigation .drawer-left,
+    body.format-mtubebs.path-mod.has-secondarynavigation .drawer-right {
+        top: 0;
+    }
+
+    /* Moove's !important drops the drawers below a secondary navigation this page hides. */
+    #page-course-view-mtubebs.pagelayout-course:not(.editing):has(.moove).has-secondarynavigation :is(.drawer-left, .drawer-right) {
+        top: 70px !important;
+        height: calc(100vh - 70px) !important;
+    }
+
+    #page-course-view-mtubebs.pagelayout-course:not(.editing):has(.moove).has-secondarynavigation:is(:has(#distraction-free-mode), .isexpanded) :is(.drawer-left, .drawer-right) {
+        top: 0 !important;
+        height: 100% !important;
+    }
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) #page-footer {
+    display: none;
+}
+
+/* In distraction-free mode the tabs sit in the page, as in other themes, and shadows are not used. */
+body.mtubebs-distraction-free #page .secondary-navigation.moove {
+    position: static;
+    filter: none;
+}
+
+body.mtubebs-distraction-free #page .secondary-navigation.moove > .moove-container-fluid {
+    max-width: none;
+}
+
+/* Moove keeps the drawer buttons at the top on small screens, over the back link. Boost has them at the bottom. */
+@media (max-width: 767.98px) {
+    body.format-mtubebs.path-mod .drawer-toggles .drawer-toggler {
+        top: calc(99vh - 150px);
+    }
+}

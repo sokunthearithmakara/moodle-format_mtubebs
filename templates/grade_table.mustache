@@ -1,0 +1,121 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template format_mtubebs/grade_table
+
+    The custom grade table of the user report: grade categories, items, category totals and the course total.
+
+    Context variables required for this template:
+    * userid - The user whose grades are shown.
+    * hasitems - Whether the course has grade items the user can see.
+    * rows - Category headings, items and totals in gradebook order.
+
+    Example context (json):
+    {
+        "userid": 2,
+        "hasitems": true,
+        "rows": [
+            {"iscategory": true, "name": "Assignments", "depth": 1, "ishidden": false},
+            {"isitem": true, "id": 3, "cmid": 7, "depth": 2, "name": "Test your knowledge", "url": "#", "type": "Quiz",
+             "status": {"text": "Locked", "islocked": true}, "due": {"date": "03 Nov", "time": "11:59 PM"},
+             "weight": null, "weightmax": {"value": "25%", "label": "out of 25%"}, "weightnote": null, "grade": null,
+             "grademax": {"value": "100", "label": "out of 100"},
+             "feedback": null, "ishidden": false},
+            {"isitem": true, "id": 4, "depth": 2, "name": "Participation", "url": null, "type": "Manual item",
+             "status": null, "due": null, "weight": "75%", "weightnote": null, "grade": "92.00",
+             "feedback": "<p>Well done.</p>", "ishidden": false},
+            {"istotal": true, "id": 5, "depth": 2, "name": "Assignments total", "status": null, "due": null,
+             "weight": "100%", "weightnote": null, "grade": "69.00", "ishidden": false},
+            {"istotal": true, "iscoursetotal": true, "id": 1, "depth": 1, "name": "Course total", "status": null,
+             "due": null, "weight": null, "weightnote": null, "grade": "69.00", "ishidden": false}
+        ]
+    }
+}}
+<div id="user-report-{{userid}}" class="user-report-container mtubebs-gradetable" data-region="mtubebs-gradetable">
+{{#hasitems}}
+    <div class="mtubebs-gradetable-wrap">
+        <table class="mtubebs-gradetable-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="mtubebs-gradetable-col-item">{{#str}} gradetablecolitem, format_mtubebs {{/str}}</th>
+                    <th scope="col" class="mtubebs-gradetable-col-status">{{#str}} gradetablecolstatus, format_mtubebs {{/str}}</th>
+                    <th scope="col" class="mtubebs-gradetable-col-due">{{#str}} gradetablecoldue, format_mtubebs {{/str}}</th>
+                    <th scope="col" class="mtubebs-gradetable-col-weight">{{#str}} gradetablecolweight, format_mtubebs {{/str}}</th>
+                    <th scope="col" class="mtubebs-gradetable-col-grade">{{#str}} gradetablecolgrade, format_mtubebs {{/str}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#rows}}
+                {{#iscategory}}
+                <tr class="mtubebs-gradetable-category{{#ishidden}} is-hidden{{/ishidden}}">
+                    <th scope="colgroup" colspan="5" class="mtubebs-gradetable-col-item" style="--mtubebs-gradetable-depth: {{depth}}">
+                        {{name}}
+                        {{#ishidden}}<span class="mtubebs-gradetable-hidden">{{#str}} hidden, grades {{/str}}</span>{{/ishidden}}
+                    </th>
+                </tr>
+                {{/iscategory}}
+                {{^iscategory}}
+                <tr class="{{#isitem}}mtubebs-gradetable-item{{/isitem}}{{#istotal}}mtubebs-gradetable-total{{/istotal}}{{#iscoursetotal}} is-course{{/iscoursetotal}}{{#ishidden}} is-hidden{{/ishidden}}" data-itemid="{{id}}"{{#cmid}} data-cmid="{{cmid}}"{{/cmid}}>
+                    <th scope="row" class="mtubebs-gradetable-col-item" style="--mtubebs-gradetable-depth: {{depth}}">
+                        {{#url}}<a href="{{url}}" class="mtubebs-gradetable-name">{{name}}</a>{{/url}}
+                        {{^url}}<span class="mtubebs-gradetable-name">{{name}}</span>{{/url}}
+                        {{#type}}<span class="mtubebs-gradetable-type">{{type}}</span>{{/type}}
+                        {{#ishidden}}<span class="mtubebs-gradetable-hidden">{{#str}} hidden, grades {{/str}}</span>{{/ishidden}}
+                        {{#feedback}}
+                        <details class="mtubebs-gradetable-feedback">
+                            <summary>{{#str}} feedback, grades {{/str}}{{#pix}} t/expandedchevron, core {{/pix}}</summary>
+                            <div class="mtubebs-gradetable-feedback-body">{{{.}}}</div>
+                        </details>
+                        {{/feedback}}
+                    </th>
+                    <td class="mtubebs-gradetable-col-status">
+                        {{#status}}
+                        <span class="mtubebs-gradetable-pill{{#islocked}} is-locked{{/islocked}}{{#ispassed}} is-passed{{/ispassed}}{{#isfailed}} is-failed{{/isfailed}}{{#isoverdue}} is-overdue{{/isoverdue}}">
+                            {{#islocked}}{{#pix}} t/locked, core {{/pix}}{{/islocked}}
+                            {{text}}
+                        </span>
+                        {{/status}}
+                        {{^status}}<span aria-hidden="true">--</span>{{/status}}
+                    </td>
+                    <td class="mtubebs-gradetable-col-due">
+                        {{#due}}<span class="mtubebs-gradetable-due-date">{{date}}</span> <span class="mtubebs-gradetable-due-time">{{time}}</span>{{/due}}
+                        {{^due}}<span aria-hidden="true">--</span>{{/due}}
+                    </td>
+                    <td class="mtubebs-gradetable-col-weight">
+                        {{#weight}}{{.}}{{/weight}}{{^weight}}<span aria-hidden="true">--</span>{{/weight}}
+                        {{#weightmax}}
+                        <span class="mtubebs-gradetable-grademax"><span aria-hidden="true">/{{value}}</span><span class="visually-hidden">{{label}}</span></span>
+                        {{/weightmax}}
+                        {{#weightnote}}<span class="mtubebs-gradetable-note">{{.}}</span>{{/weightnote}}
+                    </td>
+                    <td class="mtubebs-gradetable-col-grade">
+                        {{#grade}}{{.}}{{/grade}}{{^grade}}<span aria-hidden="true">--</span>{{/grade}}
+                        {{#grademax}}
+                        <span class="mtubebs-gradetable-grademax"><span aria-hidden="true">/{{value}}</span><span class="visually-hidden">{{label}}</span></span>
+                        {{/grademax}}
+                    </td>
+                </tr>
+                {{/iscategory}}
+                {{/rows}}
+            </tbody>
+        </table>
+    </div>
+{{/hasitems}}
+{{^hasitems}}
+    <p class="mtubebs-gradetable-empty text-muted mb-0">{{#str}} gradetablenoitems, format_mtubebs {{/str}}</p>
+{{/hasitems}}
+</div>

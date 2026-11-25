@@ -1,0 +1,48 @@
+{{!
+This file is part of Moodle - http://moodle.org/
+Moodle is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+Moodle is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with Moodle.  If not, see <http://www.gnu.org/licenses />.
+}}
+{{!
+@template format_mtubebs/contentmenu
+Overflow menu for content area tools.
+Example context (json):
+{
+}
+}}
+<div id="sidemenu-wrapper"
+     class="p-0 mx-0 mb-0 mt-3 {{#options.collapsedonstart}}hide mtubebs-collapsed{{/options.collapsedonstart}}">
+    <div id="sidemenu">
+        <button id="sideinfo-toggle"
+                class="position-absolute btn btn-subtle-primary"
+                type="button"
+                title="{{#str}}collapse, format_mtubebs{{/str}}">
+            <i class="dir-rtl-hide fa fa-chevron-left" aria-hidden="true"></i>
+            <i class="dir-ltr-hide fa fa-chevron-right" aria-hidden="true"></i>
+        </button>
+        <div id="course-header" class="d-flex align-items-center">
+            {{#course.image}}
+            <img id="course-image-background"
+                 src="{{course.image}}"
+                 alt="{{{course.coursetitle}}}">
+        {{/course.image}}
+        <div class="title-background"></div>
+        <div class="d-flex w-100 z-index-1" id="course-info">
+            <div class="w-100 d-flex flex-column align-items-center" id="header-h">{{>format_mtubebs/courseheader-h}}</div>
+        </div>
+        <div class="bottom-background"></div>
+    </div>
+
+<ul class="m-0 p-0 list-unstyled" id="course-description">
+    {{{content}}}
+</ul>
+</div>
+</div>

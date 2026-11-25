@@ -1,0 +1,2277 @@
+/* stylelint-disable declaration-no-important */
+/* Moodle 5.3 */
+.format-mtubebs .course-section .section-item {
+    background: none;
+}
+
+.format-mtubebs .activity-item,
+.format-mtubebs .activity-item:hover:not(:has(.delegated-section)) {
+    background-color: transparent;
+}
+
+.format-mtubebs .delegated-section:where(:not(.courseindex-section)) {
+    background: var(--bs-white);
+}
+
+.format-mtubebs .activity-item:focus-within:not(:has(.delegated-section)) {
+    outline: none;
+}
+
+:where(.format-mtubebs) .timeline-name > small {
+    width: 35px;
+}
+
+.format-mtubebs .activity-altcontent .no-overflow p:last-child {
+    margin-bottom: 0.5rem;
+}
+
+/* Moodle 5.3 Ends */
+
+:root {
+    --subtle-primary: rgba(var(--bs-primary-rgb), 0.1);
+    --subtle-primary-1: rgba(var(--bs-primary-rgb), 0.4);
+}
+
+.format-mtubebs #background-loading .spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+.format-mtubebs .btn-rounded {
+    border-radius: 4rem;
+}
+
+.format-mtubebs *:is(.bg-primary, .btn-primary, .badge-primary, .dropdown-item.active, .dropdown-item:active, .dropdown-item:hover,
+.dropdown-item:focus, .dropdown-item:focus-within, .iv-badge-primary) {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+    color: #fff !important;
+}
+
+.format-mtubebs *:is(.btn:focus, .btn.focus, .modal-dialog[tabindex="0"].focus .modal-content,
+.modal-dialog[tabindex="0"]:focus .modal-content) {
+    box-shadow: 0 0 0 0.2rem var(--subtle-primary-1);
+}
+
+#page-course-view-mtubebs .bg-light {
+    background-color: var(--bs-light) !important;
+}
+
+[data-bs-theme="dark"] div:not(.isbranded) img[src*="filtericon=1"]:not(.activityicon):where(.format-mtubebs *),
+[data-bs-theme="dark"] .timeline-name img[src*="filtericon=1"]:where(.format-mtubebs *),
+[data-bs-theme="dark"] .search-result-icon img:where(.format-mtubebs *) {
+    filter: invert(1);
+}
+
+#page-course-view-mtubebs[data-bs-theme="dark"] .bg-light,
+[data-bs-theme="dark"] #page-course-view-mtubebs .bg-light {
+    background-color: var(--bs-dark-bg-subtle) !important;
+}
+
+#page-course-view-mtubebs .bg-secondary {
+    background-color: rgba(var(--bs-secondary-rgb), 0.5) !important;
+}
+
+#page-course-view-mtubebs[data-bs-theme="dark"] .activity-item.hiddenactivity :is(.activityiconcontainer, .badge),
+[data-bs-theme="dark"] #page-course-view-mtubebs .activity-item.hiddenactivity :is(.activityiconcontainer, .badge) {
+    mix-blend-mode: unset;
+}
+
+#page-course-view-mtubebs[data-bs-theme="dark"] li.activity:not(.subsection):has(.activity-item.hiddenactivity),
+[data-bs-theme="dark"] #page-course-view-mtubebs li.activity:not(.subsection):has(.activity-item.hiddenactivity) {
+    background-color: var(--bs-dark-bg-subtle) !important;
+}
+
+#page-course-view-mtubebs *:is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
+    font-weight: 500;
+}
+
+#page-course-view-mtubebs *:is(.clamp-1, .clamp-2, .clamp-3) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    overflow: hidden;
+}
+
+#page-course-view-mtubebs .clamp-2 {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+
+#page-course-view-mtubebs .clamp-3 {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+}
+
+#page-course-view-mtubebs .btn:disabled,
+#page-course-view-mtubebs .btn.disabled {
+    border: 0;
+    pointer-events: none;
+}
+
+#page-course-view-mtubebs .btn-group .btn.btn-icon:last-child {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+#page-course-view-mtubebs .btn-group .btn.btn-icon:first-child {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+#page-course-view-mtubebs .btn.btn-icon:disabled {
+    opacity: 0.4;
+}
+
+#page-course-view-mtubebs .left-0 {
+    left: 0;
+}
+
+#page-course-view-mtubebs .rounded-xl {
+    border-radius: 1rem;
+}
+
+#page-course-view-mtubebs .coursecontact-item *:is(.userpicture, .userinitials) {
+    width: 45px;
+    height: 45px;
+    font-size: 1.25rem;
+}
+
+.course-format-options-form .coursecontacts-list .coursecontacts-row {
+    gap: 0.5rem;
+}
+
+.course-format-options-form .coursecontacts-list .drag-handle {
+    cursor: grab;
+}
+
+.course-format-options-form .coursecontacts-list .coursecontacts-name {
+    flex: 0 0 12rem;
+    width: 12rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.course-format-options-form .coursecontacts-list .coursecontacts-description:disabled {
+    opacity: 0.6;
+}
+
+#page-course-view-mtubebs:not(.editing) .btn.btn-icon.icons-collapse-expand:hover {
+    outline-color: var(--bs-primary);
+}
+
+:where(.format-mtubebs) div:not(#sidebar-wrapper) #sidebar-wrapper .btn.btn-icon.icons-collapse-expand:hover {
+    outline-color: transparent;
+}
+
+#page-course-view-mtubebs:not(.editing) .btn-icon.icons-collapse-expand {
+    height: 36px;
+    padding: 0;
+    width: 36px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 767.98px) {
+    #page-course-view-mtubebs:not(.editing) .btn-icon.icons-collapse-expand {
+        height: 30px;
+        width: 30px;
+        font-size: 0.9rem;
+    }
+}
+
+:where(.format-mtubebs) .opacity-50 {
+    opacity: 0.5;
+}
+
+#page-course-view-mtubebs .top-0 {
+    top: 0;
+}
+
+#page-course-view-mtubebs .start-0 {
+    left: 0;
+}
+
+#page-course-view-mtubebs .end-0 {
+    right: 0;
+}
+
+#page-course-view-mtubebs .z-index-5 {
+    z-index: 5;
+}
+
+#page-course-view-mtubebs .line-height-15 {
+    line-height: 1.5;
+}
+
+@keyframes indeterminateFlow {
+    0% {
+        left: -30%;
+        width: 30%;
+    }
+
+    50% {
+        left: 50%;
+        width: 50%;
+    }
+
+    100% {
+        left: 100%;
+        width: 20%;
+    }
+}
+
+:where(.format-mtubebs) .progress-bar-fill {
+    animation: indeterminateFlow 1.8s linear infinite;
+}
+
+:where(.format-mtubebs) .page-progress {
+    height: 4px !important;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1050;
+}
+
+.format-mtubebs ul.mtubebs {
+    padding: 0;
+}
+
+#page-course-view-mtubebs #content-wrapper {
+    left: 0;
+    top: 0;
+    overflow: auto;
+    z-index: 1;
+}
+
+#page-course-view-mtubebs #content-wrapper #sidebar-wrapper {
+    height: 100%;
+    width: 65px;
+    position: absolute;
+    bottom: 0;
+    z-index: 202;
+}
+
+#page-course-view-mtubebs #content-wrapper #sidebar-wrapper div {
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-course-view-mtubebs #sidemenu-wrapper {
+    background-color: var(--bs-body-bg);
+    padding: 1rem;
+    width: 35%;
+    position: relative;
+    z-index: 3;
+    margin: 1rem;
+    border-radius: 1rem 1rem 0 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/*
+ * Collapsed state for the course info panel. transform rather than `left`: it is not
+ * blocked by the `left: 60px !important` that pins the panel under 1200px, and it moves a
+ * position: sticky box, which `left` does not. .hide follows once the transition ends.
+ */
+#page-course-view-mtubebs #sidemenu-wrapper.mtubebs-collapsed {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+#page-course-view-mtubebs.dir-rtl #sidemenu-wrapper.mtubebs-collapsed {
+    transform: translateX(100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #page-course-view-mtubebs #sidemenu-wrapper {
+        transition: none;
+    }
+}
+
+#page-course-view-mtubebs #sidemenu {
+    width: 100%;
+    border-radius: 0.75rem;
+    position: sticky;
+    top: 1rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+#page-course-view-mtubebs #iframecontent {
+    width: 65%;
+    position: relative;
+    height: calc(100% - 2rem);
+    flex-grow: 1;
+    transition: width ease-in-out 300ms;
+    z-index: 0;
+}
+
+/* #main-content: unscoped rules of MooTube reach this page where both formats are installed. */
+#page-course-view-mtubebs #main-content #iframecontent > div {
+    /* stylelint-disable-next-line csstree/validator */
+    max-width: min(900px, calc(100% - 4rem));
+    margin: 0 auto;
+    position: relative;
+    transition: all ease-in-out 300ms;
+}
+
+@media (max-width: 767.98px) {
+    #page-course-view-mtubebs #main-content #iframecontent > div {
+        max-width: calc(100% - 2rem);
+    }
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) {
+    overflow: hidden;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) :is([data-region="mainpage"], #page) {
+    height: var(--ivdvh);
+    position: relative;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.mtubebs-ready):not(.editing) :is([data-region="mainpage"], #page) {
+    display: none !important;
+    overflow: hidden;
+}
+
+/* The drawers are outside #page, so they wait with it. Not display: none, because drawers.js measures them. */
+#page-course-view-mtubebs.pagelayout-course:not(.mtubebs-ready):not(.editing) .drawer {
+    visibility: hidden;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) #page {
+    overflow: hidden;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing).limitedwidth #page.drawers .main-inner {
+    max-width: 100%;
+}
+
+/* Weak, so that an Interactive Video card can set its own width. */
+:where(#page-course-view-mtubebs.pagelayout-course:not(.editing)) li.activity {
+    width: 100%;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) li.activity:not(.subsection) {
+    display: flex;
+    align-items: center;
+    padding: 7px 0.75rem;
+    margin: 0;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) li.activity:not(.subsection, .label) {
+    border-top: 1px solid var(--bs-border-color);
+}
+
+:where(.format-mtubebs) .section .activity:first-child,
+:where(.format-mtubebs) .activity.subsection + .activity {
+    border-top: none !important;
+}
+
+body:where(.format-mtubebs):not(.editing) .activity.subsection .section-item .course-content-item-content {
+    border-bottom: none !important;
+    margin-bottom: 1rem;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) .activity.subsection > .activity-item {
+    margin: 0 0 0.75rem 0;
+    border-radius: 1rem !important;
+    border: 0;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) li.activity:not(.subsection):not(:has(.activityinline, .hiddenactivity, .card-only)):hover {
+    background-color: rgba(155, 155, 155, 0.1);
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) #page.drawers .main-inner .course-section {
+    margin-top: 0;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) #page:not(.container-fluid) {
+    padding: 0;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) #page li.section.hidden {
+    margin: 0;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) #page .course-section {
+    margin-top: 0;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) .section .modtype_interactivevideo:has(.interactivevideo-card) {
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) li.activity.modtype_interactivevideo:has(.interactivevideo-card) {
+    align-items: start;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) .course-section [data-for="sectioninfo"]:empty,
+#page-course-view-mtubebs.pagelayout-course:not(.editing) .course-section [data-for="sectioninfo"] .section_availability:empty {
+    display: none;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) .course-section .section_availability {
+    margin-bottom: 0.5rem;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) #page > *:not(#content-wrapper):not(.drawer-toggles):not([data-region="right-hand-drawer"]) {
+    display: none !important;
+}
+
+#page-course-view-mtubebs .drawer-toggles .drawer-right-toggle {
+    top: calc(100px + 0.7rem);
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) li.section .activity-item {
+    padding: 0;
+    flex-grow: 1;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) li.section {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) li.section:not(.subsection) .activity-item {
+    border-radius: 0;
+    width: 100%;
+    border: 0;
+}
+
+.path-mod.format-mtubebs .activity-navigation {
+    display: none;
+}
+
+#page-course-view-mtubebs #content-wrapper[data-narrow="1"] li.activity:not(.subsection) img.activityicon {
+    height: 30px;
+    width: auto;
+    max-width: unset;
+    max-height: unset;
+    position: relative;
+}
+
+:where(.format-mtubebs) #main-wrapper li.activity:not(.subsection).active:has(.activity-icon.administration)::after {
+    background: var(--activityadministration);
+}
+
+:where(.format-mtubebs) #main-wrapper li.activity:not(.subsection).active:has(.activity-icon.assessment)::after {
+    background: var(--activityassessment);
+}
+
+:where(.format-mtubebs) #main-wrapper li.activity:not(.subsection).active:has(.activity-icon.collaboration)::after {
+    background: var(--activitycollaboration);
+}
+
+:where(.format-mtubebs) #main-wrapper li.activity:not(.subsection).active:has(.activity-icon.communication)::after {
+    background: var(--activitycommunication);
+}
+
+:where(.format-mtubebs) #main-wrapper li.activity:not(.subsection).active:has(.activity-icon.interactivecontent)::after {
+    background: var(--activityinteractivecontent);
+}
+
+:where(.format-mtubebs) #main-wrapper li.activity:not(.subsection).active:has(.activity-icon.content)::after {
+    background: var(--activitycontent);
+}
+
+#page-course-view-mtubebs #section-header {
+    width: 100%;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+    padding-top: 1rem !important;
+    z-index: 4;
+    top: 0;
+    scroll-behavior: smooth;
+}
+
+:where(.format-mtubebs) #section-header-wrapper #search-toggle {
+    z-index: 4;
+    margin-top: 0.5rem !important;
+    position: sticky;
+    top: 0;
+}
+
+#page-course-view-mtubebs #section-header button {
+    border: 0;
+    font-weight: 500;
+    height: 36px;
+    line-height: 1;
+    max-width: 300px;
+}
+
+@media (max-width: 767.98px) {
+    #page-course-view-mtubebs #section-header button {
+        height: 30px;
+        font-size: 0.9rem;
+    }
+}
+
+#page-course-view-mtubebs #main-content #section-content {
+    max-width: 750px;
+    margin: 0 auto;
+    height: max-content;
+}
+
+#page-course-view-mtubebs #sidebar-wrapper .btn-icon {
+    background-color: transparent;
+}
+
+#page-course-view-mtubebs #sidebar-wrapper .btn-icon:hover {
+    background-color: var(--subtle-primary);
+    border: 0;
+}
+
+#page-course-view-mtubebs #section-header button.active,
+#page-course-view-mtubebs #sidebar-wrapper .btn-icon.active,
+#page-course-view-mtubebs:not(.editing) .btn-icon.icons-collapse-expand.active {
+    background-color: var(--bs-primary);
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    fill: #fff;
+}
+
+#page-course-view-mtubebs #section-header li button {
+    border-radius: 0;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) .scrollbar-0 {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) .scrollbar-0::-webkit-scrollbar {
+    display: none;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) .activity.modtype_interactivevideo:has(.interactivevideo-card)
+.activity-item .activity-grid {
+    grid-template-columns: min-content 1fr min-content min-content !important;
+    align-items: start;
+    grid-template-areas:
+        "altcontent altcontent availability completion"
+        "groupmode groupmode groupmode groupmode"
+        "afterlink afterlink afterlink afterlink"
+        "visibility visibility visibility visibility" !important;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) li.activity .activity-item .activity-grid {
+    grid-template-areas:
+        "icon name groupmode availability completion"
+        "icon visibility visibility visibility visibility"
+        "icon dates dates dates dates"
+        "icon altcontent altcontent altcontent altcontent"
+        "icon afterlink afterlink afterlink afterlink";
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) .activity-restriction {
+    grid-area: availability;
+    height: 22.5px;
+    display: flex;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) li.activity:not(.interactivevideo)
+.activity-item .activity-grid.noname-grid {
+    grid-template-columns: 1fr min-content min-content min-content;
+    grid-template-areas:
+        "visibility groupmode availability completion"
+        "altcontent altcontent altcontent altcontent"
+        "afterlink afterlink afterlink afterlink" !important;
+}
+
+@media (max-width: 575.98px) {
+    #page-course-view-mtubebs.pagelayout-course:not(.editing) .activity:not(.subsection) .activity-item .activity-grid {
+        grid-template-rows: 1fr repeat(5, min-content);
+        grid-template-areas:
+            "icon name groupmode availability completion"
+            "icon visibility visibility visibility visibility"
+            "icon dates dates dates dates"
+            "icon altcontent altcontent altcontent altcontent"
+            "icon afterlink afterlink afterlink afterlink";
+    }
+}
+
+/* Interactive Video hides it for its cards. Not shown when the card shows its own completion. */
+#page-course-view-mtubebs.pagelayout-course:not(.editing) .modtype_interactivevideo:has(.interactivevideo-card):not(:has(.bottom-section > .small:not(.d-none)))
+.activity-completion {
+    display: flex !important;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) .modtype_interactivevideo:has(.interactivevideo-card) .activity-altcontent {
+    margin-inline-end: 0.5rem;
+}
+
+/* Cards that share a row get no divider: it would only span the card. */
+#page-course-view-mtubebs.pagelayout-course:not(.editing) li.activity.modtype_interactivevideo:has(:is(.card-tiny, .card-small, .card-medium, .card-mediumlarge, .card-largemedium):not(.iv-aligncenter)) {
+    border-top: 0;
+}
+
+#page-course-view-mtubebs.isexpanded #expand-toggle i.fa-expand-alt,
+#page-course-view-mtubebs:not(.isexpanded) #expand-toggle i.fa-compress-alt {
+    display: none;
+}
+
+#page-course-view-mtubebs.isexpanded #expand-toggle i.fa-compress-alt,
+#page-course-view-mtubebs:not(.isexpanded) #expand-toggle i.fa-expand-alt {
+    display: block;
+}
+
+#page-course-view-mtubebs.isexpanded #content-wrapper,
+#page-course-view-mtubebs:has(#distraction-free-mode) #content-wrapper {
+    position: fixed !important;
+    height: var(--ivdvh) !important;
+    z-index: 1050;
+}
+
+#page-course-view-mtubebs:is(:has(#distraction-free-mode), .isexpanded) .drawer-toggles .drawer-toggler,
+#page-course-view-mtubebs:is(:has(#distraction-free-mode), .isexpanded) [data-region="fixed-drawer"] {
+    z-index: 1051;
+}
+
+#page-course-view-mtubebs:is(:has(#distraction-free-mode), .isexpanded) [data-region="fixed-drawer"] {
+    height: 100%;
+    top: 0;
+}
+
+#page-course-view-mtubebs:is(.isexpanded) .fixed-top {
+    display: none !important;
+}
+
+#page-course-view-mtubebs.isexpanded #content-wrapper #content {
+    height: 100%;
+}
+
+#page-course-view-mtubebs:is(:has(#distraction-free-mode), .isexpanded) #sidemenu-wrapper {
+    top: 0 !important;
+    z-index: 200;
+}
+
+#page-course-view-mtubebs:has(#distraction-free-mode) .expand-toggle-wrapper {
+    display: none !important;
+}
+
+#page-course-view-mtubebs:has(#distraction-free-mode):not(.mtubebs-ready) {
+    display: none !important;
+}
+
+#page-course-view-mtubebs .primarymenu-wrapper {
+    display: none;
+}
+
+#page-course-view-mtubebs:has(#distraction-free-mode) .primarymenu-wrapper {
+    right: 0;
+    left: 65px;
+    margin: 0;
+    width: calc(100% - 65px);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+#page-course-view-mtubebs:has(#distraction-free-mode) .primarymenu-wrapper #user-menu-toggle {
+    border-radius: 0;
+}
+
+#page-course-view-mtubebs:has(#distraction-free-mode) .usermenu-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 767.98px) {
+    #page-course-view-mtubebs:has(#distraction-free-mode) .primarymenu-wrapper {
+        left: 0;
+        width: 100%;
+    }
+}
+
+#page-course-view-mtubebs:has(#distraction-free-mode) nav {
+    display: none;
+}
+
+#page-course-view-mtubebs #sidemenu #course-header {
+    position: relative;
+    padding: 1rem;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+@media (min-width: 1200px) {
+    #page-course-view-mtubebs #course-description {
+        display: block !important;
+    }
+
+    #page-course-view-mtubebs #sidemenu-wrapper {
+        top: 0 !important;
+        max-width: 400px;
+        position: sticky;
+        height: min-content !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    #page-course-view-mtubebs #iframecontent {
+        width: 100%;
+    }
+
+    #page-course-view-mtubebs #main-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #page-course-view-mtubebs #sidemenu #course-header {
+        padding: 1rem;
+        border-radius: 0;
+    }
+
+    #page-course-view-mtubebs #sidemenu {
+        position: relative;
+        top: unset;
+        margin-top: 0;
+    }
+
+    #page-course-view-mtubebs #section-header {
+        margin-top: 0;
+    }
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) [data-for="dropdowndialog_button"] {
+    opacity: 0.5;
+}
+
+#page-course-view-mtubebs:not(.editing) a.icons-collapse-expand {
+    text-decoration: none;
+}
+
+#page-course-view-mtubebs #sidemenu .activity.subsection .section span.icons-collapse-expand {
+    height: 24px;
+    width: 24px;
+    font-size: 0.8203125rem;
+}
+
+#page-course-view-mtubebs #main-wrapper {
+    margin-inline-start: 65px;
+}
+
+#page-course-view-mtubebs #bottombar-wrapper {
+    display: none !important;
+    overflow: visible;
+}
+
+@media (min-width: 1200px) {
+    #page-course-view-mtubebs #header-v {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    #page-course-view-mtubebs #sidemenu-wrapper {
+        padding: 0 !important;
+        left: 65px !important;
+        opacity: 1;
+        position: fixed;
+        width: 400px;
+        max-width: 100%;
+        height: 100%;
+        z-index: 31;
+        overflow: auto;
+        bottom: 0;
+        border-radius: 0;
+    }
+
+    #page-course-view-mtubebs #sidemenu {
+        border: 0 !important;
+        border-radius: 0 !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    #page-course-view-mtubebs #main-wrapper {
+        margin-inline-start: 0;
+    }
+
+    #page-course-view-mtubebs #sidebar-wrapper {
+        display: none !important;
+    }
+
+    #page-course-view-mtubebs #bottombar-wrapper {
+        display: flex !important;
+        overflow: visible;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    #page-course-view-mtubebs #bottombar-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    #page-course-view-mtubebs #content-wrapper #iframecontent {
+        left: 0 !important;
+        width: 100%;
+    }
+
+    #page-course-view-mtubebs #main-wrapper #content > div {
+        padding: 0 !important;
+    }
+
+    #page-course-view-mtubebs #bottombar > div {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 0.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    #page-course-view-mtubebs #bottombar > div {
+        margin: 0 !important;
+    }
+}
+
+#page-course-view-mtubebs #bottombar-wrapper {
+    order: 2;
+    position: relative;
+    z-index: 10;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+#page-course-view-mtubebs #bottombar-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+#page-course-view-mtubebs #main-wrapper {
+    order: 1;
+}
+
+#page-course-view-mtubebs #content-wrapper .btn {
+    border: 0;
+    align-items: center;
+    margin: 0;
+}
+
+#page-course-view-mtubebs:not(.editing) .btn-icon.icons-collapse-expand {
+    color: var(--bs-primary);
+    fill: var(--bs-primary);
+    background: var(--subtle-primary);
+    justify-content: center;
+    border: 0;
+}
+
+#page-course-view-mtubebs .visually-hidden {
+    display: none;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) .activityiconcontainer {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#page-course-view-mtubebs img#course-image-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#page-course-view-mtubebs img#course-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#page-course-view-mtubebs .course-image-edit-btn {
+    opacity: 0.92;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+    border-radius: 50%;
+}
+
+/* Bootstrap .ratio stretches every direct child; keep the edit control small in the corner. */
+#page-course-view-mtubebs .ratio > .course-image-edit-btn {
+    width: auto;
+    height: auto;
+    inset: auto;
+    top: 0.25rem;
+    inset-inline-end: 0.25rem;
+}
+
+#page-course-view-mtubebs .course-image-edit-btn--loading {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+#page-course-view-mtubebs .image-wrapper .course-image-edit-btn,
+#page-course-view-mtubebs #header-v .course-image-edit-btn,
+#page-course-view-mtubebs #header-h .course-image-edit-btn {
+    z-index: 5;
+}
+
+#page-course-view-mtubebs #header-v .video-wrapper,
+#page-course-view-mtubebs #header-h .video-wrapper,
+#page-course-view-mtubebs #sidemenu .video-wrapper {
+    z-index: 1;
+}
+
+#page-course-view-mtubebs #sidemenu #course-header .title {
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+}
+
+#page-course-view-mtubebs .title-background,
+#page-course-view-mtubebs .bottom-background {
+    position: absolute;
+    width: 100%;
+    background: linear-gradient(0deg, var(--bs-body-bg), transparent);
+    z-index: -1;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+#page-course-view-mtubebs .title-background,
+#page-course-view-mtubebs img#course-image-background {
+    filter: blur(60px);
+    z-index: -1;
+}
+
+#page-course-view-mtubebs #course-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* stylelint-disable-next-line csstree/validator */
+    max-width: min(900px, calc(100% - 1.5rem));
+}
+
+.format-mtubebs .cursor-pointer {
+    cursor: pointer;
+}
+
+#page-course-view-mtubebs .course-contacts {
+    display: flex;
+    flex-direction: column;
+}
+
+#page-course-view-mtubebs #sidemenu .video-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#page-course-view-mtubebs #sidemenu .video-wrapper i,
+#page-course-view-mtubebs #header-v .video-wrapper i {
+    font-size: 2rem;
+    color: var(--bs-white);
+    transition: all 0.3s ease-in-out;
+}
+
+#page-course-view-mtubebs #sidemenu .video-wrapper:hover {
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+#page-course-view-mtubebs #sidemenu .video-wrapper:hover i {
+    transform: scale(1.25);
+    transition: all 0.3s ease-in-out;
+}
+
+#page-course-view-mtubebs .modal:has(.coursevideomodal-mtubebs) .modal-header {
+    display: none;
+}
+
+#page-course-view-mtubebs .modal:has(.coursevideomodal-mtubebs) .coursevideo-modal-close {
+    position: absolute;
+    top: 0.5rem;
+    inset-inline-end: 0.5rem;
+    z-index: 5;
+    opacity: 0.92;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 35%);
+}
+
+#page-course-view-mtubebs .modal:has(.coursevideomodal-mtubebs) .coursevideo-modal-close:hover {
+    opacity: 1;
+}
+
+#page-course-view-mtubebs .modal:has(.coursevideomodal-mtubebs) .modal-body {
+    background-color: #000;
+}
+
+#page-course-view-mtubebs .modal:has(.coursevideomodal-mtubebs) .modal-body > div {
+    height: 0;
+    width: 100%;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+#page-course-view-mtubebs .modal:has(.coursevideomodal-mtubebs) .modal-body iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+#page-course-view-mtubebs .image-wrapper {
+    max-width: 300px;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+#page-course-view-mtubebs .image-wrapper > div {
+    width: 100%;
+    height: 0;
+    position: relative;
+    padding-bottom: 56.25%;
+}
+
+#page-course-view-mtubebs .modal-content {
+    border: 0;
+    border-radius: 1rem;
+}
+
+#page-course-view-mtubebs .reportmodal-mtubebs .modal-dialog {
+    max-width: 1180px;
+    width: calc(100% - 2rem);
+    min-height: 50vh;
+    margin-top: 1.75rem;
+}
+
+#page-course-view-mtubebs .reportmodal-mtubebs img.icon {
+    width: auto;
+    height: 32px;
+}
+
+@keyframes jellyIn {
+    0% {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    50%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes jellyOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes jellyDeny {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+body.format-mtubebs .modal.jelly-anim .modal-dialog,
+#page-course-view-mtubebs .modal.jelly-anim .modal-dialog {
+    animation: jellyIn 0.45s cubic-bezier(0.34, 1.4, 0.64, 1);
+    transform-origin: center;
+}
+
+body.format-mtubebs .modal.jelly-anim-out .modal-dialog,
+#page-course-view-mtubebs .modal.jelly-anim-out .modal-dialog {
+    animation: jellyOut 0.35s ease-in;
+    transform-origin: center;
+}
+
+body.format-mtubebs .modal.jelly-anim-deny .modal-dialog,
+#page-course-view-mtubebs .modal.jelly-anim-deny .modal-dialog {
+    animation: jellyDeny 0.45s ease-in-out;
+    transform-origin: center;
+}
+
+body.format-mtubebs .modal.mtubebs-modal-outside-deny,
+#page-course-view-mtubebs .modal.mtubebs-modal-outside-deny {
+    transition: background-color 0.2s ease;
+}
+
+body.format-mtubebs .modal.mtubebs-modal-outside-deny.show,
+#page-course-view-mtubebs .modal.mtubebs-modal-outside-deny.show {
+    background-color: rgba(0, 0, 0, 0.62);
+}
+
+#page-course-view-mtubebs .activity-item .activity-completion button,
+#page-course-view-mtubebs .activity-item .activity-completion a[role="button"] {
+    min-height: unset;
+    height: unset;
+}
+
+#page-course-view-mtubebs .activity-item .activity-completion,
+#page-course-view-mtubebs:not(.editing) .activity-item .activity-groupmode-info .groupmode-information {
+    line-height: 1;
+    height: 22.5px;
+    display: flex;
+    align-items: center;
+}
+
+#page-course-view-mtubebs .section-menu-dropdown {
+    max-height: 350px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    overflow-x: hidden;
+    top: 0.25rem !important;
+    max-width: 400px;
+}
+
+#page-course-view-mtubebs #section-header .section-menu-dropdown {
+    top: 0 !important;
+    left: 0 !important;
+}
+
+.format-mtubebs .btn-subtle-primary {
+    background-color: var(--subtle-primary) !important;
+    color: var(--bs-emphasis-color) !important;
+}
+
+.format-mtubebs .btn-subtle-primary.active {
+    background-color: var(--bs-primary) !important;
+    color: #fff !important;
+}
+
+.format-mtubebs .btn-subtle-primary:hover {
+    background-color: var(--bs-primary) !important;
+    color: #fff !important;
+}
+
+.format-mtubebs .text-primary {
+    color: var(--bs-primary) !important;
+}
+
+#page-course-view-mtubebs:not(.editing) .activity-item .activity-completion button.btn:hover {
+    color: unset;
+}
+
+:where(.format-mtubebs) #search-results {
+    list-style-type: none;
+    padding: 0;
+}
+
+:where(.format-mtubebs) #search-results .search-result:not(.d-none):nth-child(even) {
+    background-color: var(--bs-tertiary-bg);
+}
+
+:where(.format-mtubebs) #search-wrapper input {
+    background-color: var(--subtle-primary);
+}
+
+:where(.format-mtubebs) #search-wrapper .modal-body {
+    min-height: 28rem;
+}
+
+:where(.format-mtubebs) #search-wrapper .search-input-group {
+    flex: 1 1 auto;
+    min-width: 0;
+    background-color: var(--subtle-primary);
+    border-radius: var(--bs-border-radius);
+}
+
+:where(.format-mtubebs) #search-wrapper .search-input-group > .form-select,
+:where(.format-mtubebs) #search-wrapper .search-input-group > .form-control {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+:where(.format-mtubebs) #search-wrapper .search-input-group > .form-select {
+    flex: 0 1 auto;
+    width: auto;
+    max-width: 40%;
+    border-right-color: var(--bs-border-color);
+}
+
+:where(.format-mtubebs) #search-wrapper .search-input-group > .form-control {
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+}
+
+:where(.format-mtubebs) #search-wrapper .search-filter-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 0.75rem;
+    align-items: end;
+}
+
+:where(.format-mtubebs) #search-wrapper .search-filter-field .form-select,
+:where(.format-mtubebs) #search-wrapper .search-filter-field .form-control {
+    width: 100%;
+}
+
+:where(.format-mtubebs) #search-wrapper .search-filter-field.d-none {
+    display: none !important;
+}
+
+:where(.format-mtubebs) #search-wrapper .search-tag-field {
+    position: relative;
+}
+
+:where(.format-mtubebs) #search-wrapper .search-tag-suggestions {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    max-height: 10rem;
+    overflow: auto;
+}
+
+:where(.format-mtubebs) #search-results .search-result:not(.d-none) {
+    display: flex;
+    align-items: flex-start;
+}
+
+:where(.format-mtubebs) #search-results img.icon {
+    width: 24px;
+    height: 24px;
+    margin-inline-end: 1rem;
+}
+
+:where(.format-mtubebs) .search-result-link {
+    width: 100%;
+}
+
+:where(.format-mtubebs) .search-result {
+    display: none;
+}
+
+:where(.format-mtubebs) .badge-current {
+    right: 0;
+    top: 0.5rem;
+    border-radius: 5px 0 0 5px;
+    font-size: small;
+    padding: 3px 5px;
+}
+
+:where(.format-mtubebs) .current .badge-current {
+    right: -10px;
+    z-index: 4;
+    height: 25px;
+}
+
+:where(.format-mtubebs) .sectionheader-card .background-image-cover {
+    background: linear-gradient(0deg, var(--bs-body-bg) 20%, transparent 200%);
+}
+
+:where(.format-mtubebs) .sectionheader-card .section-image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bs-primary);
+    filter: blur(50px);
+}
+
+:where(.format-mtubebs) .sectionheader-card .section-invisible {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    z-index: 1;
+}
+
+#page-course-view-mtubebs #section-header-wrapper button:is(#previous-section, #next-section, #section-menu-toggle-list) {
+    display: block;
+}
+
+#page-course-view-mtubebs:is([data-sectionid="-1"], :not([data-sectionid])) #section-header-wrapper
+button:is(#previous-section, #next-section, #section-menu-toggle-list) {
+    display: none;
+}
+
+#page-course-view-mtubebs #timeline-wrapper .modal-body {
+    min-height: 100px;
+}
+
+:where(.format-mtubebs) .current .card-body::after {
+    content: '';
+    height: 15px;
+    width: 20px;
+    position: absolute;
+    right: -8px;
+    background: var(--bs-primary);
+    top: 22px;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+#page-course-view-mtubebs #main-content {
+    max-width: calc(1330px + 2rem);
+    max-height: 100%;
+    height: 100%;
+}
+
+#page-course-view-mtubebs.theme-academi.pagelayout-course [data-region="mainpage"] {
+    margin: 0;
+}
+
+:where(.format-mtubebs) #secondarymenu-side {
+    position: absolute;
+    height: 100%;
+    width: 250px;
+    left: -310px;
+    top: 0;
+    z-index: 201;
+    background: var(--bs-body-bg);
+    padding-top: 1rem;
+    border-left: 1px solid var(--bs-border-color);
+    transition: left 0.3s ease-in-out;
+}
+
+:where(.format-mtubebs) #secondarymenu-side.show {
+    left: 65px;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 767.98px) {
+    :where(.format-mtubebs) #secondarymenu-side.show {
+        left: 0;
+    }
+}
+
+body:where(.format-mtubebs):not(:has(#secondarymenu-side li)) #secondarymenu-toggle-wrapper {
+    display: none !important;
+}
+
+#page-course-view-mtubebs.pagelayout-course:not(.editing) .activity-item.hiddenactivity {
+    background-color: transparent;
+}
+
+#page-course-view-mtubebs li.activity:not(.subsection):has(.activity-item.hiddenactivity) {
+    opacity: 0.75;
+    filter: grayscale(1);
+}
+
+@media (max-width: 480px) {
+    #page-course-view-mtubebs .delegated-section .btn-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 0.8203125rem;
+    }
+}
+
+#page-course-view-mtubebs #main-wrapper #section-header-wrapper {
+    width: calc(100% + 1.5rem) !important;
+    margin-inline-start: -0.75rem;
+}
+
+:where(.format-mtubebs) #section-header-wrapper > div:not(#section-header):not(.page-progress) {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#page-course-view-mtubebs #sidemenu-wrapper #sideinfo-toggle {
+    top: 3rem;
+    left: -24px;
+    background: var(--subtle-primary);
+    color: var(--bs-primary);
+    height: 36px;
+    width: 24px;
+    padding: 0;
+    border-radius: 18px 0 0 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+#page-course-view-mtubebs #sidemenu-wrapper #sideinfo-toggle:hover {
+    width: 36px;
+    left: -36px;
+    transition: all 0.3s ease-in-out;
+}
+
+#page-course-view-mtubebs .modal-content:has(#video-info-wrapper) {
+    height: auto;
+}
+
+#page-course-view-mtubebs .activity-item .activity-completion button.btn:focus,
+#page-course-view-mtubebs .activity-item .activity-restriction.btn:focus {
+    box-shadow: none;
+}
+
+#admin-formatoptions .form-defaultinfo,
+#admin-formatoptions .form-textarea,
+#admin-formatoptions .textarea {
+    display: none;
+}
+
+#admin-formatoptions .form-description {
+    margin: 0 !important;
+}
+
+#customnodegroup :is([name="node-name"], [name="node-icon"]) {
+    max-width: 150px;
+}
+
+:where(.format-mtubebs) #container-backdrop {
+    z-index: 12;
+}
+
+@media (min-width: 1200px) {
+    :where(.format-mtubebs) #container-backdrop {
+        display: none !important;
+    }
+}
+
+:where(.format-mtubebs) #secondarymenu-side .dropdown-item {
+    white-space: normal;
+    border-radius: 0.5rem;
+    padding: 0.35rem 0.5rem;
+}
+
+#page-course-view-mtubebs li.activity .activity-badges .badge {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#page-course-view-mtubebs li.activity .activity-item .activity-groupmode-info {
+    align-self: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#page-course-view-mtubebs:not(.editing) .groupmode-icon-info {
+    display: none;
+}
+
+/* Container query context on activity lists */
+#page-course-view-mtubebs :is(ul.section, [data-for="cmlist"], #course-description) {
+    /* stylelint-disable-next-line csstree/validator */
+    container-type: inline-size;
+}
+
+:where(.format-mtubebs) #more-menu {
+    position: absolute;
+    bottom: 70px;
+    width: 200px;
+    background: var(--bs-body-bg);
+    padding: 0.5rem;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 1rem;
+    right: 0;
+    display: none;
+}
+
+:where(.format-mtubebs) #more-menu > * {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 0.5rem;
+}
+
+:where(.format-mtubebs) #more-menu > *:hover {
+    background-color: var(--bs-light-bg-subtle);
+}
+
+body:where(.format-mtubebs):not(:has(#more-menu .d-flex)) #more-menu-wrapper {
+    display: none;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(0.95);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+:where(.format-mtubebs) #main-wrapper li.activity:not(.subsection)::after {
+    transition: all 0.3s ease-in-out;
+}
+
+:where(.format-mtubebs) #main-wrapper li.activity:not(.subsection).active::after {
+    animation: zoom 0.3s ease-in-out;
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #000;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    opacity: 0.1;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+span[data-fieldtype="text"]:has(input[type="color"]) {
+    display: flex;
+}
+
+:where(.format-mtubebs) .course-section-header {
+    position: relative;
+}
+
+:where(.format-mtubebs) li.activity.subsection.active .delegated-section {
+    outline: 2px solid var(--bs-primary);
+    border-radius: 1rem;
+}
+
+:where(.format-mtubebs) #sidebar-wrapper.hide-labels span.small {
+    display: none;
+}
+
+:where(.format-mtubebs) #sidebar-wrapper.hide-labels .btn-icon {
+    margin-bottom: 5px !important;
+}
+
+.format-mtubebs .activity-item .activity-altcontent img {
+    border-radius: 0;
+}
+
+#page-course-view-mtubebs .modal #sidemenu-wrapper {
+    width: 100% !important;
+    left: 0 !important;
+    position: relative;
+}
+
+#page-course-view-mtubebs .modal #sidemenu .sidemenu-modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 2;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+}
+
+#page-course-view-mtubebs .modal #sidemenu .sidemenu-modal-close:hover {
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+}
+
+#page-course-view-mtubebs .modal-dialog:has(#sidemenu-wrapper) .modal-content {
+    height: 100%;
+}
+
+.format-mtubebs .toast-default {
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+}
+
+.format-mtubebs[data-bs-theme="dark"] .text-dark,
+[data-bs-theme="dark"] .format-mtubebs .text-dark {
+    color: var(--bs-body-color) !important;
+}
+
+.format-mtubebs[data-bs-theme="dark"] .course-section .availabilityinfo,
+[data-bs-theme="dark"] .format-mtubebs .course-section .availabilityinfo {
+    background-color: var(--bs-secondary-bg);
+}
+
+.format-mtubebs .course-section.hidden .section-item {
+    background-color: transparent !important;
+    opacity: 0.85;
+}
+
+[data-bs-theme="dark"] .btn.btn-icon.icons-collapse-expand i:where(.format-mtubebs *) {
+    margin: 0;
+}
+
+#page-course-view-mtubebs:not(.editing) [data-bs-toggle="collapse"].collapsed .toggle-button.expanded-icon,
+#page-course-view-mtubebs:not(.editing) [data-bs-toggle="collapse"]:not(.collapsed) .toggle-button.collapsed-icon {
+    display: none !important;
+}
+
+#page-course-view-mtubebs:not(.editing) [data-bs-toggle="collapse"] .toggle-button {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+}
+
+.format-mtubebs:not(.editing) #page.drawers {
+    scrollbar-color: unset !important;
+}
+
+/* MooTube Basic fullscreen-capable modals (grades). */
+.modal.mtubebs-modal-fullscreen-capable {
+    overflow: hidden;
+}
+
+body.modal-open:has(.mtubebs-modal-fullscreen-capable.show) {
+    overflow: hidden !important;
+}
+
+.modal.mtubebs-modal-fullscreen-capable:not(.fullscreen) .exitfullscreen {
+    display: none;
+}
+
+.modal.mtubebs-modal-fullscreen-capable.fullscreen .enterfullscreen {
+    display: none;
+}
+
+.modal.mtubebs-modal-fullscreen-capable.fullscreen .modal-dialog {
+    height: 100% !important;
+    margin: 0 !important;
+    max-height: 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.modal.mtubebs-modal-fullscreen-capable.fullscreen .modal-content {
+    border-radius: 0 !important;
+    height: 100% !important;
+    max-height: 100% !important;
+}
+
+@media (max-width: 768px) {
+    .modal.mtubebs-modal-fullscreen-capable .modal-dialog,
+    #page-course-view-mtubebs .modal.mtubebs-modal-fullscreen-capable .modal-dialog {
+        height: 100%;
+        margin: 0;
+        max-height: 100%;
+        max-width: 100%;
+        min-height: 100%;
+        width: 100%;
+    }
+
+    .modal.mtubebs-modal-fullscreen-capable .modal-dialog.modal-dialog-centered {
+        align-items: stretch;
+        min-height: 100%;
+    }
+
+    .modal.mtubebs-modal-fullscreen-capable .modal-content,
+    #page-course-view-mtubebs .modal.mtubebs-modal-fullscreen-capable .modal-content {
+        border-radius: 0;
+        height: 100%;
+        max-height: 100%;
+    }
+
+    .modal.mtubebs-modal-fullscreen-capable .modal-header .enterfullscreen {
+        display: none;
+    }
+
+    .reportmodal-mtubebs .modal-body,
+    .reportmodal-mtubebs .grade-wrapper {
+        min-height: 0;
+    }
+}
+
+.reportmodal-mtubebs .modal-dialog {
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+    max-height: calc(100dvh - 3.5rem);
+    max-width: 1180px;
+    /* stylelint-disable-next-line csstree/validator */
+    min-height: min(50vh, 640px);
+    width: calc(100% - 2rem);
+}
+
+.reportmodal-mtubebs .modal-content {
+    display: flex;
+    flex-direction: column;
+    /* As tall as the activity modal: the viewport less the dialog margins. */
+    height: calc(100dvh - 3.5rem);
+    /* stylelint-disable-next-line csstree/validator */
+    min-height: min(50vh, 640px);
+    overflow: hidden;
+}
+
+.reportmodal-mtubebs .modal-header {
+    flex-shrink: 0;
+}
+
+/* Moodle ModalFactory defaults to scrollable=true (Bootstrap modal-dialog-scrollable).
+   That adds overflow-y:auto on .modal-body and duplicates our inner wrapper scrollbars. */
+.reportmodal-mtubebs .modal-dialog-scrollable .modal-body,
+.reportmodal-mtubebs .modal-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.reportmodal-mtubebs .grade-wrapper {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+    overflow: auto;
+    padding: 1rem;
+}
+
+.reportmodal-mtubebs .grade-wrapper .mtubebs-grade-report-content,
+.reportmodal-mtubebs .grade-wrapper .user-report-container,
+.reportmodal-mtubebs .grade-wrapper .no-overflow {
+    overflow: visible;
+}
+
+.reportmodal-mtubebs .grade-wrapper .user-grade {
+    margin-bottom: 0;
+}
+
+.reportmodal-mtubebs img.icon {
+    height: 32px;
+    width: auto;
+}
+
+#page-course-view-mtubebs .toast-wrapper {
+    z-index: 2000;
+}
+
+.course-format-options-form [data-name="coursecontactseditor"] {
+    width: 100%;
+}
+
+.mtubebs-format-section-description {
+    background-color: var(--bs-primary-bg-subtle);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.format-mtubebs:has(#activity-nav) #page-navbar {
+    display: none !important;
+}
+
+:where(.format-mtubebs) .activity-nav-back {
+    min-width: 0;
+}
+
+:where(.format-mtubebs) .activity-nav-back .btn {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.format-mtubebs .activity-nav-back .btn:not(:hover, .mtubebs-course-menu-toggle) {
+    background-color: transparent !important;
+}
+
+:where(.format-mtubebs) .activity-nav-actions {
+    flex-shrink: 0;
+}
+
+/* Distraction-free mode: an activity page fills the window, over the navbar. */
+/* #page scrolls instead, and themes like Academi would add the document's scrollbar to it. */
+html:has(> body.mtubebs-distraction-free),
+body.mtubebs-distraction-free {
+    overflow: hidden;
+}
+
+body.mtubebs-distraction-free {
+    --mtubebs-df-bar-height: 60px;
+}
+
+/* The Boost MBL quiz attempt bar hides #activity-nav, so there is nothing to leave room for. */
+body.mtubebs-distraction-free:has(.mbl-quiz-bar) {
+    --mtubebs-df-bar-height: 0;
+}
+
+body.mtubebs-distraction-free #page {
+    position: fixed;
+    inset: var(--mtubebs-df-bar-height) 0 0;
+    z-index: 1031;
+    /* Not 100% wide: an open drawer's margin has to narrow the page. */
+    width: auto;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    /*
+     * Boost scrolls #page, but themes like Moove scroll the body, which a fixed page can't use.
+     * !important beats the overflow Boost's drawers.js writes on #page on narrow screens.
+     */
+    overflow-y: auto !important;
+    background: var(--bs-body-bg);
+}
+
+/*
+ * The page covers the theme's header, but shows it wherever it moves aside for a panel.
+ * Not display: none, because Academi and Boost's drawers.js still measure these.
+ */
+body.mtubebs-distraction-free #page-wrapper > :is(.navbar, .header-main, .secondary-navigation) {
+    visibility: hidden;
+}
+
+/* Across the window, outside #page: an open drawer narrows the page but leaves the bar alone. */
+body.mtubebs-distraction-free > #activity-nav {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 1052;
+    height: var(--mtubebs-df-bar-height);
+    padding: 0 1rem;
+    background: var(--bs-body-bg);
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+body.mtubebs-distraction-free .activity-nav-actions {
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* A navbar only for the user menu's styles, so it stays in the bar and adds nothing of its own. */
+body.mtubebs-distraction-free .mtubebs-nav-usermenu.navbar.fixed-top {
+    position: static;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
+body.mtubebs-distraction-free #activity-nav .btn {
+    margin-bottom: 0 !important;
+}
+
+/* The video player's open panels are inside #page, so #page has to come above the bar for them to cover it. */
+body.mtubebs-distraction-free:has(#interactivevideo-container.chapter-open, .iv-sidebar:not(.hide)) #page {
+    z-index: 1053;
+}
+
+body.mtubebs-distraction-free :is(#page-footer, footer) {
+    display: none !important;
+}
+
+body.mtubebs-distraction-free #page .main-inner {
+    margin-top: 0;
+}
+
+body.mtubebs-distraction-free :is(.drawer-toggles .drawer-toggler, [data-region="fixed-drawer"]) {
+    z-index: 1051;
+}
+
+/*
+ * Below the bar, down to the window's edge, and solid. !important undoes the small card Boost anchors
+ * next to the content on limited-width pages, whose low z-index would leave the navbar showing above it.
+ */
+body.mtubebs-distraction-free [data-region="fixed-drawer"] {
+    top: var(--mtubebs-df-bar-height) !important;
+    height: calc(100% - var(--mtubebs-df-bar-height)) !important;
+    max-height: none !important;
+    z-index: 1051 !important;
+    padding-bottom: 0 !important;
+    border-radius: 0 !important;
+    background: var(--bs-body-bg);
+}
+
+body.mtubebs-distraction-free .drawer.drawer-right.show {
+    left: auto !important;
+    right: 0 !important;
+    border-left: 1px solid var(--bs-border-color);
+}
+
+body.mtubebs-distraction-free .drawer.drawer-left.show {
+    left: 0 !important;
+    right: auto !important;
+    border-right: 1px solid var(--bs-border-color);
+}
+
+/* Moove prints the title as a bare heading. */
+body.mtubebs-distraction-free-nomod #page-header :is(.page-context-header, h1) {
+    display: none !important;
+}
+
+/* The course menu moves to an off-canvas panel. */
+body.mtubebs-distraction-free-nomod .secondary-navigation {
+    display: none;
+}
+
+.activity-nav-back:has(.mtubebs-course-menu-toggle) {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* The course page's Menu button, whose rules are scoped to that page. */
+.activity-nav-back .btn.mtubebs-course-menu-toggle {
+    height: 36px;
+    width: 36px;
+    padding: 0;
+    flex-shrink: 0;
+    justify-content: center;
+    overflow: visible;
+    color: var(--bs-primary);
+    fill: var(--bs-primary);
+    background: var(--subtle-primary);
+    border: 0;
+}
+
+@media (max-width: 767.98px) {
+    .activity-nav-back .btn.mtubebs-course-menu-toggle {
+        height: 30px;
+        width: 30px;
+        font-size: 0.9rem;
+    }
+}
+
+.offcanvas.mtubebs-course-menu {
+    z-index: 1061;
+    box-shadow: none;
+}
+
+.mtubebs-course-menu .nav-link {
+    color: var(--bs-body-color);
+    border-radius: 0.5rem;
+}
+
+.mtubebs-course-menu .nav-link.active,
+.mtubebs-course-menu a.nav-link:hover {
+    background-color: var(--bs-tertiary-bg);
+}
+
+.mtubebs-course-menu .nav-link.active {
+    font-weight: 600;
+}
+
+/* The Boost MBL quiz attempt bar has its own link back to the quiz. */
+.format-mtubebs:has(.mbl-quiz-bar) #activity-nav {
+    display: none !important;
+}
+
+/* Icon picker vendor CSS hardcodes a white panel. Theme it for Boost dark mode.
+   Higher specificity is required because iconpicker-1.5.0.css is injected after this file. */
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content {
+    background: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    box-shadow: 0 0 24px -8px rgba(0, 0, 0, 0.55);
+}
+
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-search {
+    border-bottom-color: var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-search > input#IconPickerSearch {
+    color: var(--bs-body-color);
+    background: var(--bs-body-bg);
+    border-color: var(--bs-border-color);
+    box-shadow: none;
+}
+
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-search > input#IconPickerSearch:hover,
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-search > input#IconPickerSearch:focus {
+    border-color: var(--bs-emphasis-color);
+}
+
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-search > i.placeholder-icon {
+    color: var(--bs-secondary-color);
+}
+
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-search > input#IconPickerSearch:hover + i.placeholder-icon,
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-search > input#IconPickerSearch:focus + i.placeholder-icon {
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-search-results p.ip-no-results-found {
+    color: var(--bs-secondary-color);
+}
+
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-area:before {
+    box-shadow: none;
+    background: linear-gradient(to bottom, transparent, var(--bs-body-bg));
+}
+
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-search-results > * > i,
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-area > i {
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-search-results > * > i:hover,
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-area > i:hover {
+    background: var(--bs-tertiary-bg);
+    box-shadow: 0 0 16px -6px rgba(0, 0, 0, 0.65);
+}
+
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-area > a.ip-show-all-icons {
+    background: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    border-color: var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-area > a.ip-show-all-icons:hover {
+    color: var(--bs-body-bg);
+    border-color: var(--bs-emphasis-color);
+    background: var(--bs-emphasis-color);
+}
+
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-footer {
+    border-top-color: var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-footer a.cancel {
+    color: var(--bs-body-color);
+    border-color: var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] div#IconPickerModal .ip-icons-content .ip-icons-footer a.cancel:hover {
+    color: var(--bs-body-bg);
+    border-color: var(--bs-emphasis-color);
+    background: var(--bs-emphasis-color);
+}
+
+[data-bs-theme="dark"] div#IconPickerLoading {
+    background: var(--bs-body-bg);
+}
+
+[data-bs-theme="dark"] div#IconPickerLoading > svg circle {
+    fill: var(--bs-body-color);
+}
+
+/* Dark mode color-scheme on selects so OS/browser renders native picker popup and scrollbars in dark theme */
+:is([data-bs-theme="dark"], body[data-bs-theme="dark"], html[data-bs-theme="dark"]) :is(.format-mtubebs, #page-course-view-mtubebs, .modal) :is(select, .form-select),
+:is(.format-mtubebs, #page-course-view-mtubebs, .modal)[data-bs-theme="dark"] :is(select, .form-select) {
+    color-scheme: dark;
+}
+
+/* Dark mode option and optgroup styling across all selects */
+:is([data-bs-theme="dark"], body[data-bs-theme="dark"], html[data-bs-theme="dark"]) :is(.format-mtubebs, #page-course-view-mtubebs, .modal) :is(select, .form-select) option,
+:is(.format-mtubebs, #page-course-view-mtubebs, .modal)[data-bs-theme="dark"] :is(select, .form-select) option {
+    background-color: var(--bs-body-bg, #1d2125) !important;
+    color: var(--bs-body-color, #dee2e6) !important;
+}
+
+:is([data-bs-theme="dark"], body[data-bs-theme="dark"], html[data-bs-theme="dark"]) :is(.format-mtubebs, #page-course-view-mtubebs, .modal) :is(select, .form-select) optgroup,
+:is(.format-mtubebs, #page-course-view-mtubebs, .modal)[data-bs-theme="dark"] :is(select, .form-select) optgroup {
+    background-color: var(--bs-body-bg, #1d2125);
+    color: var(--bs-secondary-color, #adb5bd);
+}
+
+/* Custom grade table of the grades popup. */
+/* The container keeps the core class for printing, but not core's light box, which ignores dark mode. */
+div.mtubebs-gradetable.user-report-container {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.mtubebs-gradetable-wrap {
+    position: relative;
+    overflow-x: auto;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 1rem;
+}
+
+.mtubebs-gradetable-table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    color: var(--bs-body-color);
+}
+
+.mtubebs-gradetable-table th,
+.mtubebs-gradetable-table td {
+    padding: .75rem 1rem;
+    border: 0;
+    background: none;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.mtubebs-gradetable-table thead th {
+    font-weight: 600;
+    color: var(--bs-secondary-color);
+    white-space: nowrap;
+}
+
+.mtubebs-gradetable-table tbody tr {
+    border-top: 1px solid var(--bs-border-color);
+}
+
+.mtubebs-gradetable-table .mtubebs-gradetable-col-item {
+    min-width: 14rem;
+    padding-left: calc(1rem + (var(--mtubebs-gradetable-depth, 1) - 1) * 1.5rem);
+}
+
+.mtubebs-gradetable-table .mtubebs-gradetable-col-status {
+    width: 9rem;
+}
+
+.mtubebs-gradetable-table .mtubebs-gradetable-col-due {
+    width: 9rem;
+}
+
+.mtubebs-gradetable-table .mtubebs-gradetable-col-weight,
+.mtubebs-gradetable-table .mtubebs-gradetable-col-grade {
+    width: 7rem;
+    text-align: right;
+}
+
+.mtubebs-gradetable-name {
+    display: block;
+    color: var(--bs-body-color);
+}
+
+a.mtubebs-gradetable-name:hover {
+    color: var(--bs-link-hover-color);
+}
+
+.mtubebs-gradetable-type,
+.mtubebs-gradetable-due-time,
+.mtubebs-gradetable-note,
+.mtubebs-gradetable-grademax {
+    display: block;
+    font-size: .875rem;
+    color: var(--bs-secondary-color);
+}
+
+.mtubebs-gradetable-due-date {
+    display: block;
+}
+
+.mtubebs-gradetable-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    padding: 0 .5rem;
+    border-radius: 50rem;
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    white-space: nowrap;
+    color: var(--bs-secondary-color);
+    background-color: var(--bs-tertiary-bg);
+}
+
+.mtubebs-gradetable-pill .icon {
+    width: .875rem;
+    height: .875rem;
+    margin: 0;
+    font-size: .875rem;
+}
+
+.mtubebs-gradetable-pill.is-passed {
+    color: var(--bs-success-text-emphasis);
+    background-color: var(--bs-success-bg-subtle);
+}
+
+.mtubebs-gradetable-pill.is-failed {
+    color: var(--bs-danger-text-emphasis);
+    background-color: var(--bs-danger-bg-subtle);
+}
+
+.mtubebs-gradetable-pill.is-overdue {
+    color: var(--bs-warning-text-emphasis);
+    background-color: var(--bs-warning-bg-subtle);
+}
+
+.mtubebs-gradetable-table .mtubebs-gradetable-category > th {
+    font-weight: 600;
+    background-color: var(--bs-tertiary-bg);
+}
+
+.mtubebs-gradetable-table .mtubebs-gradetable-total .mtubebs-gradetable-name,
+.mtubebs-gradetable-table .mtubebs-gradetable-total .mtubebs-gradetable-col-grade {
+    font-weight: 600;
+}
+
+.mtubebs-gradetable-table tbody tr.mtubebs-gradetable-total.is-course {
+    border-top-width: 2px;
+}
+
+.mtubebs-gradetable-table .is-hidden .mtubebs-gradetable-name {
+    color: var(--bs-secondary-color);
+}
+
+.mtubebs-gradetable-hidden {
+    display: inline-block;
+    margin-top: .25rem;
+    padding: 0 .5rem;
+    border-radius: 50rem;
+    font-size: .75rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    color: var(--bs-secondary-color);
+    background-color: var(--bs-secondary-bg);
+}
+
+.mtubebs-gradetable-feedback {
+    margin-top: .25rem;
+    font-size: .875rem;
+}
+
+.mtubebs-gradetable-feedback > summary {
+    display: inline-flex;
+    align-items: center;
+    gap: .125rem;
+    font-weight: 600;
+    color: var(--bs-link-color);
+    cursor: pointer;
+    list-style: none;
+}
+
+.mtubebs-gradetable-feedback > summary::-webkit-details-marker {
+    display: none;
+}
+
+.mtubebs-gradetable-feedback > summary .icon {
+    margin: 0;
+    font-size: .75rem;
+    transition: transform .15s ease-in-out;
+}
+
+.mtubebs-gradetable-feedback:not([open]) > summary .icon {
+    transform: rotate(-90deg);
+}
+
+.mtubebs-gradetable-feedback-body {
+    margin-top: .25rem;
+    color: var(--bs-secondary-color);
+}
+
+.mtubebs-gradetable-feedback-body > :last-child {
+    margin-bottom: 0;
+}
+
+/* Matches the playlist panel that local_ivplaylist adds to Interactive Video pages. */
+.path-mod-interactivevideo.format-mtubebs .playlist-panel .section-list-body .interactivevideo-card.columnlayout {
+    flex-direction: row !important;
+}

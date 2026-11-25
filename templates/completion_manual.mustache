@@ -1,0 +1,83 @@
+{{!
+This file is part of Moodle - http://moodle.org/
+Moodle is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+Moodle is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with Moodle.  If not, see <http://www.gnu.org/licenses />.
+}}
+{{!
+@template format_mtubebs/completion_manual
+Template for displaying the manual completion button.
+
+Context variables required for this template:
+* cmid - Course module id.
+* activityname - Activity name for the accessible labels.
+* istrackeduser - Whether completion is tracked for the viewer (otherwise a disabled square).
+* overallcomplete / overallincomplete - Current state.
+* withavailability - Whether other activities' availability depends on this completion.
+* normalbutton - Regular size instead of btn-sm (activity list).
+
+Example context (json):
+{
+"cmid": 0,
+"activityname": "Activity",
+"istrackeduser": true,
+"overallcomplete": true,
+"overallincomplete": false,
+"normalbutton": true
+}
+}}
+{{#istrackeduser}}
+{{#overallcomplete}}
+<button
+    class="p-0 bg-transparent btn {{^normalbutton}}btn-sm{{/normalbutton}} text-nowrap text-success"
+    data-action="toggle-manual-completion-mtubebs"
+    data-bs-toggletype="manual:undo"
+    data-cmid="{{cmid}}"
+    data-activityname="{{activityname}}"
+    data-hasavailability="{{withavailability}}" {{!
+    }}{{#accessibledescription}}{{!
+    }}title="{{.}}" {{!
+    }}aria-label="{{.}}" {{!
+    }}{{/accessibledescription}}{{!
+    }}{{^accessibledescription}}{{!
+    }}title="{{#str}}completion_manual:aria:done, course, {{activityname}} {{/str}}" {{!
+    }}aria-label="{{#str}}completion_manual:aria:done, course, {{activityname}} {{/str}}" {{!
+    }}{{/accessibledescription}}
+    >
+    <i class="fa fa-square-check fa-fw fa-xl" aria-hidden="true"></i>
+</button>
+{{/overallcomplete}}
+{{#overallincomplete}}
+<button class="p-0 bg-transparent btn {{^normalbutton}}btn-sm{{/normalbutton}} text-nowrap"
+    data-action="toggle-manual-completion-mtubebs"
+    data-bs-toggletype="manual:mark-done"
+    data-cmid="{{cmid}}"
+    data-activityname="{{activityname}}"
+    data-withavailability="{{withavailability}}"
+    data-hasavailability="{{withavailability}}"
+    {{!
+    }}{{#accessibledescription}}{{!
+    }}title="{{.}}" {{!
+    }}aria-label="{{.}}" {{!
+    }}{{/accessibledescription}}{{!
+    }}{{^accessibledescription}}{{!
+    }}title="{{#str}}completion_manual:aria:markdone, course, {{activityname}} {{/str}}" {{!
+    }}aria-label="{{#str}}completion_manual:aria:markdone, course, {{activityname}} {{/str}}" {{!
+    }}{{/accessibledescription}}>
+    <i class="far fa-square fa-fw fa-xl" aria-hidden="true"></i>
+</button>
+{{/overallincomplete}}
+{{/istrackeduser}}
+{{^istrackeduser}}
+<button class="bg-transparent btn {{^normalbutton}}btn-sm{{/normalbutton}} text-nowrap"
+        disabled aria-hidden="true">
+    <i class="far fa-square fa-fw fa-xl" aria-hidden="true"></i>
+</button>
+{{/istrackeduser}}

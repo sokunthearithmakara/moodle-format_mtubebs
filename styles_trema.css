@@ -1,0 +1,16 @@
+/* stylelint-disable declaration-no-important */
+#page-course-view-mtubebs.pagelayout-course:not(.editing) #content-wrapper .btn.btn-icon.icons-collapse-expand {
+    padding: 0;
+}
+
+[data-for="sectiontoggler"].collapsed .expanded-icon {
+    display: none !important;
+}
+
+[data-for="sectiontoggler"]:not(.collapsed) .collapsed-icon {
+    display: none !important;
+}
+
+#page-course-view-mtubebs .rounded-xl {
+    border-radius: 1rem !important;
+}

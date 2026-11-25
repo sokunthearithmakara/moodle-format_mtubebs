@@ -1,0 +1,23 @@
+/* stylelint-disable declaration-no-important */
+#page-course-view-mtubebs:not(.editing) .page-title-area,
+#page-course-view-mtubebs:not(.editing) .nice-activity-navigation,
+body.mtubebs-distraction-free .footer-area,
+#page-course-view-mtubebs:not(.editing) .footer-area {
+    display: none !important;
+}
+
+#page-course-view-mtubebs .container {
+    max-width: unset;
+}
+
+#page-course-view-mtubebs .sectionheader-card {
+    box-shadow: none !important;
+}
+
+#page-course-view-mtubebs .tooltip.show {
+    z-index: 1000002;
+}
+
+#page-course-view-mtubebs .image-wrapper::before {
+    display: none;
+}

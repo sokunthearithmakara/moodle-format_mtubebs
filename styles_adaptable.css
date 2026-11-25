@@ -1,0 +1,25 @@
+/* stylelint-disable declaration-no-important */
+.format-mtubebs .btn-group .btn:not(:first-child, :last-child) {
+    border-radius: 0 !important;
+}
+
+.format-mtubebs :is(.btn-group, .input-group) > *:first-child {
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+
+.format-mtubebs :is(.btn-group, .input-group) > *:last-child {
+    border-radius: 0 0.25rem 0.25rem 0 !important;
+}
+
+.format-mtubebs .btn-link,
+.format-mtubebs .btn-link:hover,
+.format-mtubebs .btn-link:focus,
+.format-mtubebs .btn-link:active,
+.format-mtubebs .btn-link:visited {
+    border: 0;
+    background-color: transparent !important;
+    box-shadow: none;
+    color: var(--bs-primary) !important;
+    min-height: 0;
+    padding: 0;
+}

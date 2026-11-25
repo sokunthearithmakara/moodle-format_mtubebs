@@ -1,0 +1,67 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template format_mtubebs/coursecontacts-editor
+
+    Sortable course contacts editor for format options form.
+
+    Example context (json):
+    {
+        "rows": [
+            {
+                "userid": 2,
+                "fullname": "Mike Kane",
+                "checked": true,
+                "description": "Professor"
+            }
+        ]
+    }
+}}
+<div id="coursecontacts-list" class="coursecontacts-list w-100" data-region="coursecontacts-sortable-list">
+    {{#rows}}
+    <div class="coursecontacts-row d-flex align-items-center mb-2 p-2 bg-light iv-rounded-lg"
+         data-userid="{{userid}}">
+        <div class="drag-handle cursor-pointer text-muted me-2 flex-shrink-0"
+             data-drag-type="move"
+             tabindex="0"
+             role="button"
+             title="{{#str}}movecontent, moodle, {{{fullname}}}{{/str}}">
+            <i class="fa-solid fa-grip" aria-hidden="true"></i>
+        </div>
+        <div class="form-check me-2 flex-shrink-0 mb-0">
+            <input type="checkbox"
+                   class="form-check-input coursecontacts-check"
+                   id="coursecontact-{{userid}}"
+                   data-userid="{{userid}}"
+                   {{#checked}}checked{{/checked}}>
+            <label class="form-check-label visually-hidden" for="coursecontact-{{userid}}">
+                {{{fullname}}}
+            </label>
+        </div>
+        <div class="coursecontacts-name me-2 flex-shrink-0 fw-bold text-truncate"
+             title="{{fullname}}">
+            {{{fullname}}}
+        </div>
+        <input type="text"
+               class="form-control form-control-sm coursecontacts-description flex-grow-1"
+               data-userid="{{userid}}"
+               value="{{description}}"
+               placeholder="{{#str}}coursecontactdescription, format_mtubebs{{/str}}"
+               {{^checked}}disabled{{/checked}}>
+    </div>
+    {{/rows}}
+</div>

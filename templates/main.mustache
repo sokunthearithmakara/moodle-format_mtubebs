@@ -1,0 +1,126 @@
+{{!
+This file is part of Moodle - http://moodle.org/
+Moodle is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+Moodle is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with Moodle.  If not, see <http://www.gnu.org/licenses />.
+}}
+{{!
+@template format_mtubebs/main
+Root layout shell for the MooTube Basic course view.
+Example context (json):
+{
+}
+}}
+<div id="content-wrapper"
+     data-narrow="1"
+     class="w-100 position-absolute bg-body d-flex flex-column overflow-hidden {{globals.config.theme}}">
+    <div id="container-backdrop"
+         class="bg-dark opacity-50 position-absolute top-0 left-0 w-100 h-100"
+         style="display: none"></div>
+    {{#options.distractionfreemode}}
+    <div class="primarymenu-wrapper fixed-top navbar px-2">
+        {{#distractionfree}}
+        <div class="back-to-course-wrapper d-flex align-items-center">
+            <a class="ms-2 btn btn-subtle-primary btn-sm"
+               type="button"
+               href="{{^isguestuser}}{{wwwroot}}/my/courses.php{{/isguestuser}}{{#isguestuser}}{{wwwroot}}{{/isguestuser}}"
+               aria-expanded="false">
+                <i class="dir-rtl-hide fa fa-arrow-left" aria-hidden="true"></i>
+                <i class="dir-ltr-hide fa fa-arrow-right" aria-hidden="true"></i>
+                <span class="mb-0 ms-2">{{^isguestuser}}{{#str}}mycourses, format_mtubebs{{/str}}{{/isguestuser}}{{#isguestuser}}{{#str}}home, format_mtubebs{{/str}}{{/isguestuser}}</span>
+            </a>
+        </div>
+    {{/distractionfree}}
+    {{#primarymenu}}
+    <div class="usermenu-wrapper"></div>
+    {{/primarymenu}}
+</div>
+{{/options.distractionfreemode}}
+{{> format_mtubebs/sidebar }}
+{{> format_mtubebs/bottombar }}
+<div id="main-wrapper" class="h-100 overflow-auto border-bottom">
+    {{^options.hidemenu}}
+    <div id="secondarymenu-side" class="overflow-auto">
+        <ul class="list-unstyled m-2" aria-labelledby="secondarymenu-side">
+        </ul>
+    </div>
+    {{/options.hidemenu}}
+
+    <div id="content" class="w-100 position-relative">
+        {{#options.announcementdesc}}
+        <div id="announcement-wrapper" class="w-100 position-relative bg-primary px-3 py-1">
+            <div class="d-flex justify-content-center align-items-center position-relative w-100 container">
+                <{{^options.announcementlink}}div{{/options.announcementlink}}{{#options.announcementlink}}a href="{{options.announcementlink}}" target="_blank"{{/options.announcementlink}} class="announcement-container d-flex align-items-center clamp-1 flex-grow-1 text-white text-decoration-none">
+                    <i class="fa fa-bullhorn me-2" aria-hidden="true"></i>
+                    {{#options.announcementtitle}}
+                    <span class="announcement-title iv-font-weight-bold me-2 d-none d-md-inline-block">{{{options.announcementtitle}}}</span>
+                    {{/options.announcementtitle}}
+                    <span class="announcement-desc clamp-2 my-1">{{{options.announcementdesc}}}</span>
+                </{{^options.announcementlink}}div{{/options.announcementlink}}{{#options.announcementlink}}a{{/options.announcementlink}}>
+                <div class="announcement-buttons d-flex align-items-center">
+                    {{#options.announcementlink}}
+                    <a class="btn btn-rounded text-white" href="{{options.announcementlink}}" target="_blank">
+                        <i class="fa fa-external-link" aria-hidden="true"></i>
+                        <span class="d-none d-md-inline-block ms-2">{{#str}}more, format_mtubebs{{/str}}</span>
+                    </a>
+                    {{/options.announcementlink}}
+                    <button class="btn text-white" id="close-announcement" title="{{#str}}close, format_mtubebs{{/str}}">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        {{/options.announcementdesc}}
+        <div class="px-0">
+            <div class="d-flex mx-auto w-100" id="main-content">
+                {{> format_mtubebs/contentmenu }}
+                <div class="position-relative">{{> format_mtubebs/courseheader-v }}</div>
+                <div id="iframecontent" class="px-0 h-100 position-relative">
+                    <div>
+                        <div id="section-header-wrapper"
+                             class="d-flex justify-content-between align-items-center position-{{#options.stickynav}}sticky{{/options.stickynav}}{{^options.stickynav}}relative{{/options.stickynav}} top-0 bg-body border-bottom z-index-5">
+                            <div class="page-progress position-absolute top-0 left-0 w-100 bg-light iv-rounded">
+                                <div class="progress-bar-fill bg-primary position-absolute h-100"
+                                     style="width: 100%"></div>
+                            </div>
+                            {{> format_mtubebs/sectionsheader }}
+                        <div>
+                            <button id="refresh-section"
+                                    class="btn-icon icons-collapse-expand btn ms-2 mt-2"
+                                    type="button"
+                                    aria-label="{{#str}}refresh, format_mtubebs{{/str}}"
+                                    title="{{#str}}refresh, format_mtubebs{{/str}}">
+                                <span class="visually-hidden">{{#str}}refresh, format_mtubebs{{/str}}</span>
+                                <i class="fa fa-rotate" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        {{#options.showsearch}}
+                        <div>
+                            <button id="search-toggle"
+                                    class="btn-icon icons-collapse-expand btn ms-2"
+                                    type="button"
+                                    aria-label="{{#str}}search, format_mtubebs{{/str}}"
+                                    title="{{#str}}search, format_mtubebs{{/str}}">
+                                <span class="visually-hidden">{{#str}}search, format_mtubebs{{/str}}</span>
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    {{/options.showsearch}}
+                </div>
+        <ul id="section-content"
+            class="w-100 pb-6 position-relative px-0 mt-3"
+            data-region="main-page"></ul>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

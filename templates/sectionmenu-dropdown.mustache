@@ -1,0 +1,90 @@
+{{!
+This file is part of Moodle - http://moodle.org/
+Moodle is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+Moodle is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with Moodle.  If not, see <http://www.gnu.org/licenses />.
+}}
+{{!
+@template format_mtubebs/sectionmenu-dropdown
+Section menu displayed as a dropdown.
+Example context (json):
+{
+}
+}}
+<div class="d-flex justify-content-between align-items-center"
+     id="section-menu">
+    <div class="d-flex align-items-center btn-group">
+        <button class="btn-icon icons-collapse-expand btn px-2"
+                type="button"
+                aria-label="{{#str}}previous,format_mtubebs{{/str}}"
+                id="previous-section"
+                disabled>
+            <span class="visually-hidden">{{#str}}previous,format_mtubebs{{/str}}</span>
+            <i class="dir-rtl-hide fa fa-chevron-left" aria-hidden="true"></i>
+            <i class="dir-ltr-hide fa fa-chevron-right" aria-hidden="true"></i>
+        </button>
+        <div class="btn-group dropdown">
+            <button class="btn-subtle-primary btn text-truncate dropdown-toggle rounded-0"
+                    type="button"
+                    id="section-menu-toggle-list"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                <span>{{options.sectionlabelplural}}</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-start section-menu-dropdown shadow-sm border-0"
+                aria-labelledby="section-menu-toggle-list">
+            {{#sections}}
+                    <li>
+                        <button class="{{#current}}current{{/current}} btn text-truncate w-100 dropdown-item px-3 text-start"
+                                type="button"
+                                {{#current}}
+                                title="{{options.currentsectionlabel}}"
+                                {{/current}}
+                                data-sectionid="{{id}}"
+                                data-section="{{section}}">
+                            {{#restricted}}<i class="fa fa-lock fa-fw me-1" aria-hidden="true"></i>{{/restricted}}
+                            {{^visible}}<i class="fa fa-eye-slash fa-fw me-1" aria-hidden="true"></i>{{/visible}}
+                            {{#visible}}
+                                {{^restricted}}
+                                    {{#isempty}}<i class="fa-solid fa-circle-exclamation fa-fw me-1 opacity-50"
+                                        title="{{#str}}emptysection,format_mtubebs{{/str}}"></i>{{/isempty}}
+                                    {{^isempty}}
+                                        {{#hascompletion}}
+                                            {{#completed}}
+                                                <i class="fa fa-check fa-fw me-1"
+                                                   title="{{#str}}completed, format_mtubebs{{/str}}"></i>
+                                            {{/completed}}
+                                            {{^completed}}
+                                                <i class="far fa-circle fa-fw me-1"
+                                                   title="{{#str}}notcompleted, format_mtubebs{{/str}}"></i>
+                                            {{/completed}}
+                                        {{/hascompletion}}
+                                        {{^hascompletion}}<i class="fa fa-minus fa-fw me-1" aria-hidden="true"></i>{{/hascompletion}}
+                                    {{/isempty}}
+                                {{/restricted}}
+                            {{/visible}}
+                            {{#showsectionnumber}}{{section}}. {{/showsectionnumber}}{{#options.useshortname}}{{{shortname}}}{{/options.useshortname}}{{^options.useshortname}}{{{name}}}{{/options.useshortname}}
+                            {{#current}}<i class="fa fa-star fa-sm mx-1" aria-hidden="true"></i>{{/current}}
+                        </button>
+                    </li>
+            {{/sections}}
+            </ul>
+        </div>
+        <button class="btn-icon icons-collapse-expand btn px-2"
+                type="button"
+                aria-label="{{#str}}next,format_mtubebs{{/str}}"
+                id="next-section"
+                disabled>
+            <span class="visually-hidden">{{#str}}next,format_mtubebs{{/str}}</span>
+            <i class="dir-rtl-hide fa fa-chevron-right" aria-hidden="true"></i>
+            <i class="dir-ltr-hide fa fa-chevron-left" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>

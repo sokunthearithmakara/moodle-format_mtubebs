@@ -1,0 +1,48 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template format_mtubebs/coursecontact
+
+    Course contact and teacher information block.
+
+    Example context (json):
+    {
+    }
+}}
+
+<div class="w-100 course-contacts mt-1">
+{{#contactdata}}
+    <div class="coursecontact-item mb-3 me-3 d-flex align-items-center w-100">
+        {{{profile}}}
+        <div class="d-inline-block align-middle ms-1">
+        <div class="d-flex flex-column">
+        <a class="iv-font-weight-bold"
+           href="{{url}}"
+           style="line-height:1;">{{{name}}}</a>
+        {{#description}}
+        <span class="small text-muted">{{description}}</span>
+        {{/description}}
+        {{^description}}
+        {{^isguestuser}}
+        <a class="small text-muted text-decoration-none" href="mailto:{{email}}" target="_blank">{{email}}</a>
+        {{/isguestuser}}
+        {{/description}}
+        </div>
+        </div>
+    </div>
+{{/contactdata}}
+</div>

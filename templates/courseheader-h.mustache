@@ -1,0 +1,60 @@
+{{!
+This file is part of Moodle - http://moodle.org/
+Moodle is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+Moodle is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with Moodle.  If not, see <http://www.gnu.org/licenses />.
+}}
+{{!
+@template format_mtubebs/courseheader-h
+Horizontal course header banner.
+Example context (json):
+{
+}
+}}
+{{#options.showcourseimage}}
+<div class="image-wrapper position-relative">
+    <div>
+        <img id="course-image"
+             src="{{course.image}}"
+             alt="{{{course.coursetitle}}}"
+             height="100%"
+             width="100%">
+        {{#caneditimage}}
+        <button type="button"
+                class="btn btn-sm btn-light course-image-edit-btn position-absolute top-0 end-0 m-1 z-3"
+                data-action="edit-course-image"
+                title="{{#str}}editcourseimage, format_mtubebs{{/str}}">
+            <i class="fa fa-pen" aria-hidden="true"></i>
+            <span class="visually-hidden">{{#str}}editcourseimage, format_mtubebs{{/str}}</span>
+        </button>
+        {{/caneditimage}}
+        {{#course.video}}
+        <div class="video-wrapper"
+             data-type="{{course.videotype}}"
+             data-url="{{course.video}}">
+            <i class="fa fa-play" aria-hidden="true"></i>
+        </div>
+    {{/course.video}}
+</div>
+</div>
+{{/options.showcourseimage}}
+<div class="w-100">
+    {{#course.coursetitle}}
+    <h4 class="title h4 iv-font-weight-bold mb-3">{{{course.coursetitle}}}</h4>
+    {{/course.coursetitle}}
+    {{#teacherhtml}}
+    <div class="d-flex align-items-start flex-column w-100 z-index-1">
+        {{#options.coursecontactlabel}}
+        <span class="small text-muted">{{options.coursecontactlabel}}</span>
+    {{/options.coursecontactlabel}}
+    {{{teacherhtml}}}
+</div>
+{{/teacherhtml}}
+</div>

@@ -1,0 +1,40 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template format_mtubebs/customnodegroup
+
+    Custom sidebar link group.
+
+    Example context (json):
+    {
+    }
+}}
+<p class="word-break mb-2" aria-hidden="true" style="cursor: default;">
+        <b>{{#str}}customnode, format_mtubebs{{/str}}</b>
+    </p>
+<div id="customnodegroup" class="mb-2">
+<div class="input-group mb-1">
+    <span class="input-group-text iconpicker cursor-pointer"><i class="far fa-circle fa-fw" aria-hidden="true"></i></span>
+    <input type="text" class="form-control" id="node-name" name="node-name" placeholder="{{#str}}name, format_mtubebs{{/str}}">
+    <input type="text" class="form-control" id="node-icon" name="node-icon" placeholder="{{#str}}icon, format_mtubebs{{/str}}">
+    <input type="text" class="form-control" id="node-url" name="node-url" placeholder="{{#str}}url, format_mtubebs{{/str}}">
+    <button class="btn btn-secondary add-node" type="button" aria-label="{{#str}}add{{/str}}"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    <button class="btn btn-secondary text-danger remove-node" type="button" aria-label="{{#str}}remove{{/str}}"><i class="fa fa-minus" aria-hidden="true"></i></button>
+</div>
+</div>
+{{! Outside #customnodegroup on purpose: the JS clones .input-group from inside it. }}
+<p class="text-muted small mb-2">{{#str}}customnodehelp, format_mtubebs{{/str}}</p>

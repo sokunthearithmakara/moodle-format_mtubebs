@@ -1,0 +1,11 @@
+/* stylelint-disable declaration-no-important */
+/* Academi offsets the toggles past #page, which scrolls sideways in distraction-free mode. */
+body.mtubebs-distraction-free.theme-based-header #page.drawers:is(.show-drawer-left, .show-drawer-right) .drawer-toggles {
+    left: 0;
+    right: 0;
+}
+
+/* No shadows in distraction-free mode. */
+body.mtubebs-distraction-free [data-region="fixed-drawer"] .drawerheader {
+    box-shadow: none !important;
+}
