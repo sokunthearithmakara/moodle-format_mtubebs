@@ -131,7 +131,7 @@ class formatoptions_form extends \core_form\dynamic_form {
      * Defines form elements
      */
     public function definition() {
-        global $OUTPUT;
+        global $CFG, $OUTPUT;
         $mform = &$this->_form;
         $mform->addElement('hidden', 'contextid', null);
         $mform->setType('contextid', PARAM_INT);
@@ -281,7 +281,12 @@ class formatoptions_form extends \core_form\dynamic_form {
         $mform->addElement('header', 'activitypageheader', get_string('activitypage', 'format_mtubebs'));
         $this->add_section_description('activitypageheader_desc');
         $group = [];
-        foreach (['showcourseindex', 'showactivitynav', 'showbacktosection'] as $key) {
+        $keys = ['showcourseindex', 'showactivitynav', 'showbacktosection'];
+        if ($CFG->branch < 503) {
+            // Core has no activity navigation in the sticky footer before Moodle 5.3.
+            $keys = ['showcourseindex', 'showbacktosection'];
+        }
+        foreach ($keys as $key) {
             $group[] = $mform->createElement(
                 'advcheckbox',
                 $key,

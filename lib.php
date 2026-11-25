@@ -106,11 +106,16 @@ class format_mtubebs extends format_topics {
     /**
      * Turn the activity navigation of an activity page off when the course option says so.
      *
+     * Core has this navigation from Moodle 5.3.
+     *
      * @param moodle_page $page
      */
     public function page_set_cm(moodle_page $page) {
         parent::page_set_cm($page);
-        if (empty($this->get_format_options()['showactivitynav'])) {
+        if (
+            method_exists($page, 'set_show_navigation_footer')
+            && empty($this->get_format_options()['showactivitynav'])
+        ) {
             $page->set_show_navigation_footer(false);
         }
     }

@@ -73,15 +73,18 @@ class get_cms extends external_api {
         $modnamelabels = [];
         foreach ($cms as $cm) {
             $mod = [];
-            if ($cm->deletioninprogress) { // Not getting the deleted modules.
+            // Not getting the deleted modules.
+            if ($cm->deletioninprogress) {
                 continue;
             }
 
-            if (!$cm->is_visible_on_course_page() && !$cm->uservisible) { // Not getting the hidden from student modules.
+            // Not getting the hidden from student modules.
+            if (!$cm->is_visible_on_course_page() && !$cm->uservisible) {
                 continue;
             }
 
-            if (!$cm->has_view()) { // Not getting modules without view page.
+            // Not getting modules without view page.
+            if (!$cm->has_view()) {
                 continue;
             }
 

@@ -155,7 +155,7 @@ final class resume_test extends \advanced_testcase {
         // The teacher hides it while the learner is away.
         $this->setAdminUser();
         $section = get_fast_modinfo($course)->get_section_info(2);
-        \core_courseformat\formatactions::section($course)->set_visibility($section, false);
+        \core_courseformat\formatactions::section($course)->update($section, ['visible' => 0]);
 
         $this->setUser($student);
         $this->assertNull(resume::recall((int) $course->id));

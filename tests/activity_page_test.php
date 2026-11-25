@@ -75,6 +75,10 @@ final class activity_page_test extends \advanced_testcase {
         $page = $this->open_activity($cm);
 
         $this->assertSame($index, course_get_format($cm->get_course())->uses_course_index());
+        if (!class_exists(linearnavigationsettings::class)) {
+            // Core has this navigation from Moodle 5.3.
+            return;
+        }
         $this->assertSame($navigation, linearnavigationsettings::show_navigation_footer($page));
     }
 
